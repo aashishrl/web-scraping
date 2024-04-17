@@ -20,10 +20,12 @@ async function scrapeAndTranslate() {
     const scrapedTitle = await page.evaluate(() => {
         return document.querySelector('.fc-dialog-headline').innerText;
     });
-    console.log(scrapedTitle);
+
+    console.log("scrapedTitle");
+    // console.log(scrapedTitle);
     // Translate the scraped text
     const translatedText = await translateText(scrapedTitle);
-    console.log('Translated text:', translatedText);
+    // console.log('Translated text:', translatedText);
 
     await browser.close();
 }
